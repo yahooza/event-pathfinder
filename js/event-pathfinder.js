@@ -51,19 +51,9 @@
             params['dompath'] = dom.join(DELIMITER);
 
         window.setTimeout(function() {
+
             _log(params);
-
             return;
-
-            var message = '/action-tracking/i/?payload=' + encodeURIComponent(_$.param(params)),
-                img     = new Image();
-
-                img.src = message;
-                img.onload = function(event) {
-                    img = null;
-                }
-
-            params = null;
 
         }, 10);
     };
