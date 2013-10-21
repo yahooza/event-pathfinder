@@ -70,8 +70,8 @@
         while (null != target.parentNode && "body" !== tag) {
             dom.unshift([
                 tag,
-                (target.id          ? '#' + target.id         : ''),
-                (target.className   ? '.' + target.className  : '')
+                (target.id          ? '#' + target.id : ''),
+                (target.className   ? '.' + target.className.split(' ').join('.') : '')
             ].join(''));
             target = target.parentNode;
             tag = target.tagName.toLowerCase();
@@ -99,7 +99,7 @@
     var _init = function () {
 
         if (!(window.CryptoJS && CryptoJS.SHA256)) {
-          _load('//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js');
+          _load('http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js');
         }
         
         for (var i=0, l=events.length; i<l; i++) {
