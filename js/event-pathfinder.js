@@ -54,7 +54,7 @@
         if (!(str && str.length > 0)) {
           return null;
         }
-        return parseInt(window.CryptoJS.SHA256(str).toString(CryptoJS.enc.Hex).substring(0, 13), 16);
+        return window.CryptoJS.SHA256(str).toString(CryptoJS.enc.Hex).substring(0, 16);
     }
 
     /**
