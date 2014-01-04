@@ -78,7 +78,7 @@
         }
 
         var params = params || {};
-            params['dompath'] = dom.join(DELIMITER);
+            params['dompath'] = dom.join(DELIMITER).replace(/([0-9]+)/g,'').replace(/-/g,'');
 
         window.setTimeout(function() {
 
